@@ -8,6 +8,8 @@ The goal was to analyze a suspicious email, decode its payloads, extract Indicat
 ---
 ## 🛡️Investigation Workflow
 
+Blue Team Labs Online Challenge: The Planet's Prestige https://blueteamlabs.online/home/challenge/the-planets-prestige-e5beb8e545
+
 ### Step 1: Initial Triage
 - Preserved the suspicious `.eml` file for forensic integrity.
 - Ensured safe handling by isolating the email in a lab environment.
@@ -86,7 +88,4 @@ Unzipped archive revealed:
 
 
 
----
-
-## 📂 Repository Structure
 
