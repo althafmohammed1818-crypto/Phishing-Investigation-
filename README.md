@@ -1,5 +1,3 @@
-# Phishing-Investigation-
-This repository documents a complete phishing email investigation performed in a controlled SOC lab environment. It showcases a reproducible workflow for analyzing suspicious emails, decoding payloads, extracting Indicators of Compromise (IOCs), and correlating findings with threat intelligence platforms.
 
 # 🧠 Phishing Investigation — SOC Analyst Lab
 
@@ -8,43 +6,52 @@ This repository documents a **phishing email investigation** performed in a SOC 
 The goal was to analyze a suspicious email, decode its payloads, extract Indicators of Compromise (IOCs), and correlate findings with threat intelligence platforms.
 
 ---
+## 🛡️Investigation Workflow
 
-## 🧩 Investigation Workflow
+### Step 1: Initial Triage
+- Preserved the suspicious `.eml` file for forensic integrity.
+- Ensured safe handling by isolating the email in a lab environment.
 
-### 1️⃣ Email Header Analysis
-- **SPF Authentication:** Failed for IP `93.99.104.210` → spoofed sender detected.  
-- **SPF Record Validation:** Domain published valid SPF syntax but failed authentication.  
-- **Tools Used:** MXToolbox, Email Header Analyzer.  
-- **Finding:** Sender domain impersonation confirmed.
+### Step 2: Header Analysis
+- Examined `From`, `Return‑Path`, and `Received` fields.
+- Checked SPF/DKIM/DMARC results → SPF failed for IP `93.99.104.210`.
+- Tools: **MXToolbox**, **AbuseIPDB**.
 
-### 2️⃣ Payload Decoding
-- Extracted Base64‑encoded message using **CyberChef**.  
-- Decoded output revealed ransom‑style demand: *“1 Billion CoCans🧃 in cash💰.”*  
-- Message referenced an attached puzzle ZIP file.
+### Step 3: Body & Content Review
+- Extracted and decoded obfuscated URLs (Base64, hex, Punycode).
+- Identified ransom‑style note demanding “1 Billion CoCans🧃.”
+- Saved suspicious attachments for controlled analysis.
 
-### 3️⃣ File Signature Verification
-- Hex signature `55 45 73 44 42` → ASCII `UEsDB` → ZIP archive.  
-- **Tools Used:** Hexdump, VirusTotal, Wikipedia file signature reference.  
-- **Finding:** Attachment contained compressed files disguised as legitimate documents.
+### Step 4: Payload & File Signature Verification
+- Detected ZIP archive signature (`UEsDB`).
+- Tools: **Hexdump**, **CyberChef**, **VirusTotal**.
+- Finding: Archive contained disguised files.
 
-### 4️⃣ Archive Content Analysis
-Unzipped `attachment.zip` revealed:
+### Step 5: Archive Content Analysis
+Unzipped archive revealed:
+- Tools: **unzip**, **file**, **ExifTool**.
+- Finding: Embedded metadata provided attacker clues.
 
-- **Tools Used:** unzip, file, ExifTool.  
-- **Finding:** Files contained embedded metadata and clues pointing to attacker identity.
+### Step 6: Metadata Extraction
+- `GoodJobMajor.pdf` authored by *Pestero Negeja*.
+- `DaughtersCrown.jpg` sanitized (no GPS data).
+- Tools: **ExifTool**, **strings**, **binwalk**.
 
-### 5️⃣ Metadata Extraction
-- `GoodJobMajor.pdf` authored by *Pestero Negeja*, produced with *Skia/PDF m90*.  
-- `DaughtersCrown.jpg` contained no GPS data, confirming metadata sanitization.  
-- **Tools Used:** ExifTool, strings, binwalk.  
-- **Finding:** Metadata timestamps aligned with phishing campaign timeline.
+### Step 7: Threat Intelligence Correlation
+- IP `64.190.63.222` → **SEDO GmbH**, Germany (104 reports on AbuseIPDB).
+- Domain `pashter.com` flagged malicious on VirusTotal (1/91 vendors).
+- Tools: **AbuseIPDB**, **VirusTotal**, **WHOIS**.
 
-### 6️⃣ Threat Intelligence Correlation
-- IP `64.190.63.222` → **SEDO GmbH**, Germany — reported 104 times on AbuseIPDB.  
-- Domain `pashter.com` flagged **malicious** on VirusTotal (1/91 vendors).  
-- **Tools Used:** AbuseIPDB, VirusTotal, WHOIS lookup.  
-- **Finding:** Infrastructure hosted on data‑center transit network; likely attacker C2 domain.
+### Step 8: Log Correlation (SOC Context)
+- Queried SIEM for related activity:
+  - Outbound traffic to flagged domains.
+  - Multiple recipients of the same phishing email.
+  - Endpoint traces of attachment execution.
+- Tools: **Splunk SPL queries**, **ELK dashboards**.
 
+### Step 9: Impact Assessment
+- Determined if users clicked links or opened attachments.
+- Checked endpoint logs for execution traces.
 ---
 
 ## 🧾 Indicators of Compromise (IOCs)
@@ -73,17 +80,11 @@ Unzipped `attachment.zip` revealed:
 | Analysis   | CyberChef, ExifTool, VirusTotal, AbuseIPDB |
 | Decoding   | Base64, Hexdump |
 | Documentation | Markdown, GitHub README |
-| Threat Intel | WHOIS, MXToolbox, Splunk |
+| Threat Intel | WHOIS, MXToolbox,  |
 
 ---
 
-## 📸 Evidence Screenshots
-*(Add screenshots in `/evidence` folder)*  
-- SPF failure report  
-- CyberChef decoding output  
-- ZIP file signature verification  
-- ExifTool metadata extraction  
-- VirusTotal and AbuseIPDB results  
+
 
 ---
 
