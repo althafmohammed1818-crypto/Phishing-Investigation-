@@ -86,6 +86,18 @@ Unzipped archive revealed:
 
 ---
 
+ 
+  ![image alt](https://github.com/althafmohammed1818-crypto/Phishing-Investigation-/blob/37af1d52df69ce3a6f2029339f11f355e1cb5fbd/Screenshot%202026-05-09%20114021.png)
+  ![image alt](https://github.com/althafmohammed1818-crypto/Phishing-Investigation-/blob/37af1d52df69ce3a6f2029339f11f355e1cb5fbd/Screenshot%202026-05-10%20110347.png)
+  ![image alt](https://github.com/althafmohammed1818-crypto/Phishing-Investigation-/blob/37af1d52df69ce3a6f2029339f11f355e1cb5fbd/Screenshot%202026-05-10%20112339.png)
+  ![image alt](https://github.com/althafmohammed1818-crypto/Phishing-Investigation-/blob/37af1d52df69ce3a6f2029339f11f355e1cb5fbd/Screenshot%202026-05-10%20112510.png)
+  ![image alt](https://github.com/althafmohammed1818-crypto/Phishing-Investigation-/blob/37af1d52df69ce3a6f2029339f11f355e1cb5fbd/Screenshot%202026-05-10%20113331.png)
+  ![image alt](https://github.com/althafmohammed1818-crypto/Phishing-Investigation-/blob/37af1d52df69ce3a6f2029339f11f355e1cb5fbd/Screenshot%202026-05-10%20114739.png)
+  ![image alt](https://github.com/althafmohammed1818-crypto/Phishing-Investigation-/blob/37af1d52df69ce3a6f2029339f11f355e1cb5fbd/Screenshot%202026-05-10%20115021.png)
+  ![image alt](https://github.com/althafmohammed1818-crypto/Phishing-Investigation-/blob/37af1d52df69ce3a6f2029339f11f355e1cb5fbd/Screenshot%202026-05-12%20004903.png)
+  ![image alt](https://github.com/althafmohammed1818-crypto/Phishing-Investigation-/blob/37af1d52df69ce3a6f2029339f11f355e1cb5fbd/Screenshot%202026-05-12%20004941.png)
+  ![image alt](htps://github.com/althafmohammed1818-crypto/Phishing-Investigation-/blob/37af1d52df69ce3a6f2029339f11f355e1cb5fbd/Screenshot%202026-05-12%20005104.png)
+  ![image alt](ttps://github.com/althafmohammed1818-crypto/Phishing-Investigation-/blob/37af1d52df69ce3a6f2029339f11f355e1cb5fbd/Screenshot%202026-05-12%20005129.png)
 
 
 
